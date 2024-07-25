@@ -15,6 +15,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.sprinto.utils.UtilityClass;
@@ -51,7 +52,7 @@ public class DestinationPickerPage {
     @FindBy(xpath="//ul[@class='monthList']//li")
     private List<WebElement> monthOfTravel;
 
-    @FindBy(xpath="(//div[@aria-orientation='horizontal'])[1]")
+    @FindBy(xpath="//div[@class='rangeslider__fill']")
     private WebElement tripDurationSlider;
 
     @FindBy(xpath="//button[text()='Apply']")
@@ -74,7 +75,7 @@ public class DestinationPickerPage {
         toField.click();
         toTextField.clear();
         toTextField.sendKeys(destination);
-        Thread.sleep(2000);
+        Thread.sleep(1000);
 
         for (WebElement toCity : toFieldList) {
             if (toCity.getText().contains(destination)) {
@@ -94,14 +95,13 @@ public class DestinationPickerPage {
             }
         }
         
-        Thread.sleep(1000);
         DepartureField.click();
-        
+        Thread.sleep(1000);
 
         // To select departure month
+        //wait.until(ExpectedConditions.visibilityOfAllElements(monthOfTravel));
         for (WebElement month : monthOfTravel) {
-            if (month.getText().equalsIgnoreCase(departureMonth)) {
-            	Thread.sleep(1000);
+            if (month.getText().contains(departureMonth)) {
                 month.click();
                 break;
             }
@@ -109,7 +109,7 @@ public class DestinationPickerPage {
 
         // To select number of days
         Actions actions = new Actions(driver);
-        actions.clickAndHold(tripDurationSlider).moveByOffset(110, 0).release().perform();
+        actions.clickAndHold(tripDurationSlider).moveByOffset(100, 0).release().perform();
 
         applyButton.click();
     }
@@ -126,7 +126,6 @@ public class DestinationPickerPage {
                 try {
                     prices.add(Double.parseDouble(priceText));
                 } catch (NumberFormatException e) {
-                    // Handle the case where the price text is not a valid number
                     System.err.println("Invalid price text: " + priceText);
                 }
             }
@@ -175,7 +174,7 @@ public class DestinationPickerPage {
         List<String> weekendDates = new ArrayList<>();
         for (String date : dates) {
             try {
-                Date parsedDate = dateFormat.parse("01-" + date + "-2024"); // Assuming month and year are fixed
+                Date parsedDate = dateFormat.parse("07-" + date + "-2024");
                 Calendar calendar = Calendar.getInstance();
                 calendar.setTime(parsedDate);
                 int dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
@@ -188,7 +187,7 @@ public class DestinationPickerPage {
         }
 
         if (!weekendDates.isEmpty()) {
-            return weekendDates.get(0);  // You can add further logic to choose the best weekend date if needed
+            return weekendDates.get(0);
         } else {
             int minPriceIndex = prices.indexOf(Collections.min(prices));
             return dates.get(minPriceIndex);
@@ -199,7 +198,7 @@ public class DestinationPickerPage {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
         Date targetDate;
         try {
-            targetDate = dateFormat.parse("12-" + date + "-2024"); // Assuming month and year are fixed
+            targetDate = dateFormat.parse("07-" + date + "-2024");
         } catch (ParseException e) {
             e.printStackTrace();
             return false;

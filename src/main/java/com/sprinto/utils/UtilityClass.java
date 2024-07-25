@@ -38,7 +38,7 @@ public class UtilityClass {
 		XSSFWorkbook workbook = null;
 
 		File excelFile = new File(
-				System.getProperty("user.dir") + "");
+				System.getProperty("user.dir") + "\\src\\main\\java\\com\\sprinto\\testData\\SprintoTestData.xlsx");
 		try {
 			FileInputStream fisExcel = new FileInputStream(excelFile);
 			workbook = new XSSFWorkbook(fisExcel);

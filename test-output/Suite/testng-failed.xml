@@ -9,6 +9,7 @@
       <class name="com.sprinto.tests.TestCases">
         <methods>
           <include name="tearDown"/>
+          <include name="TestCase_02" invocation-numbers="0"/>
           <include name="setUp"/>
           <include name="TestCase_01"/>
         </methods>

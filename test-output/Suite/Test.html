@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/2/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Jul 25 09:34:39 IST 2024</td>
+<td>Started on:</td><td>Thu Jul 25 10:59:46 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>18 seconds (18021 ms)</td>
+<tr><td>Total time:</td><td>83 seconds (83670 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,16 +75,17 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.sprinto.tests.TestCases.TestCase_01()'><b>TestCase_01</b><br>Test class: com.sprinto.tests.TestCases</td>
-<td><div><pre>java.lang.AssertionError: 
-	at com.sprinto.tests.TestCases.TestCase_01(TestCases.java:79)
+<td title='com.sprinto.tests.TestCases.TestCase_02()'><b>TestCase_02</b><br>Test class: com.sprinto.tests.TestCases<br>Parameters: Bengaluru, Dubai, Round Trip, December, 2024</td>
+<td><div><pre>java.lang.AssertionError: The following asserts failed:
+	expected [true] but found [false]
+	at com.sprinto.tests.TestCases.TestCase_02(TestCases.java:135)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1786040872", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1786040872'><pre>java.lang.AssertionError: 
-	at org.testng.AssertJUnit.fail(AssertJUnit.java:65)
-	at org.testng.AssertJUnit.assertTrue(AssertJUnit.java:23)
-	at org.testng.AssertJUnit.assertTrue(AssertJUnit.java:33)
-	at com.sprinto.tests.TestCases.TestCase_01(TestCases.java:79)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace698977695", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace698977695'><pre>java.lang.AssertionError: The following asserts failed:
+	expected [true] but found [false]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+	at com.sprinto.tests.TestCases.TestCase_02(TestCases.java:135)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
@@ -112,8 +113,49 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
-<td>11</td>
-<td>com.sprinto.tests.TestCases@20deea7f</td></tr>
+<td>33</td>
+<td>com.sprinto.tests.TestCases@479d31f3</td></tr>
+<tr>
+<td title='com.sprinto.tests.TestCases.TestCase_01()'><b>TestCase_01</b><br>Test class: com.sprinto.tests.TestCases</td>
+<td><div><pre>java.lang.AssertionError: The following asserts failed:
+	expected [true] but found [false]
+	at com.sprinto.tests.TestCases.TestCase_01(TestCases.java:88)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1871678080", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1871678080'><pre>java.lang.AssertionError: The following asserts failed:
+	expected [true] but found [false]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+	at com.sprinto.tests.TestCases.TestCase_01(TestCases.java:88)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>35</td>
+<td>com.sprinto.tests.TestCases@479d31f3</td></tr>
 </table><p>
 </body>
 </html>
